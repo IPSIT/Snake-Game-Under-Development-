@@ -1,0 +1,33 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+ol{
+  position: absolute;
+  width: 100%;
+  top:50%;
+  transform: translateY(-50%);
+}
+ol li{
+  list-style-type: none;
+  display: inline-block;
+  text-align: center;
+  padding:3em 1em;
+  margin:auto 2.5%;
+  width:25%;
+  letter-spacing: 8px;
+  background-image:linear-gradient(to bottom,#3c7ee8,#95BEB6);
+  border:2px solid #8eb2ed;
+  border-radius: 25px;
+  transition: all .5s;
+}
+ol li a{
+  text-decoration: none;
+  font-weight:bold;
+  padding: 1.5em;
+  font-size: 24px;
+}
+ol li:hover{
+  transform: scale(1.2,1.2);
+}
