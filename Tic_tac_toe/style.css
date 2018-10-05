@@ -1,0 +1,96 @@
+
+body{
+  margin:0px;
+  border-top:6px solid purple;
+}
+canvas{
+  position: fixed;
+  z-index: -1;
+}
+#header{
+  padding:10px 20px;
+  margin:0px auto;
+  background-color:purple;
+  color:white;
+  width:300px;
+  height:60px;
+}
+textarea{resize: none}
+.p1{
+  position : absolute;
+  left:40px;
+  top:50%;
+}
+.pc{
+  position :absolute;
+  right:40px;
+  top:50%;
+}
+#btn{
+  margin:1.2em auto;
+  width:150px;
+  background-color:#0a48ad;
+  color:white;
+  /*display:inline-block;*/
+  padding:2.5px 10px;
+
+}
+#btn:hover{
+  background-color:#000651;
+
+}
+
+
+
+
+
+#board{
+  outline:2px solid red;
+  height:500px;
+  width:500px;
+  background-color:green;
+  margin:1.5em auto;
+  padding:0;
+}
+.box{
+  position:relative;
+  height:30.4%;
+  width:30.4%;
+  background-color:#26c9e2;
+  display:inline-block;
+  margin:1%;
+
+}
+.box:hover{
+  background-color:white;
+}
+.box h1{position:absolute;font-size:108px;margin:10px 30px;}
+
+
+
+
+@media screen and (max-width: 550px){
+
+  #board{
+    position: relative;
+    max-height: 500px;
+    max-width: 500px;
+    width:95%;
+    height:;
+    margin:auto;
+    background-color: red;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+  .p1 , .pc{
+    position: relative;
+    top:0;
+    left:0;
+    background-color:orange;
+    width:80%;
+    margin:2.5em 10%;
+  }
+
+}

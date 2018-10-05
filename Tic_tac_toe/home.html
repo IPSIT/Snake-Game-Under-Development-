@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TIC TAC toe</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<canvas id="screen"></canvas>
+
+
+	<div id="header">
+    	<h1 align="center">TIC TAC TOE</h1>
+  	</div>
+
+    <div id="btn" onclick="clear()" >
+  		<h2 align="center">RETRY</h2>
+	</div>
+
+	<div id="board">
+	    <div class="box" onmousedown="put(0)"></div>
+	    <div class="box" onmousedown="put(1)"></div>
+	    <div class="box" onmousedown="put(2)"></div>
+	    <div class="box" onmousedown="put(3)"></div>
+	    <div class="box" onmousedown="put(4)"></div>
+	    <div class="box" onmousedown="put(5)"></div>
+	    <div class="box" onmousedown="put(6)"></div>
+	    <div class="box" onmousedown="put(7)"></div>
+	    <div class="box" onmousedown="put(8)"></div>
+  	</div>
+
+    <div class = "p1">
+  		<h1 >PLAYER</h1>
+ 		 <textarea id="p1" rows="2" cols="5" disabled >0</textarea>
+	</div>
+	<div class = "pc">
+ 		<h1>COMPUTER</h1>
+  		<textarea rows="2" cols="5" disabled >0</textarea>
+	</div>
+
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="bubbles.js"></script>
+</body>
+</html>
