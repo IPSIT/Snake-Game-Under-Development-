@@ -51,7 +51,7 @@ ol li{
   list-style-type: none;
   display: inline-block;
   text-align: center;
-  padding:3em 1em;
+  padding:2.5em 1em;
   margin:auto 2.5%;
   width:25%;
   letter-spacing: 8px;
@@ -66,23 +66,27 @@ ol li{
 ol li a{
   text-decoration: none;
   font-weight:bold;
-  padding: 1.5em;
+  padding: 1.3em;
   font-size: 24px;
   color: #dedfe0;
 }
 
 ol li:nth-child(1){
   top:10%;
-  left:50%;
+  left:70%;
 
 }
 ol li:nth-child(2){
-  top:40%;
-  left:30%;
-  
+  top:35%;
+  left:50%;
+
 }
 ol li:nth-child(3){
-  top:70%;
+  top:60%;
+  left:30%;
+}
+ol li:nth-child(4){
+  top:85%;
   left:15%;
 }
 ol li:hover{
