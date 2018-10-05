@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="frames.css">
+  <link rel="stylesheet" href="jquery-ui\jquery-ui.css">
+  <link rel="stylesheet" href="jquery-ui\jquery-ui.theme.css">
+  <link rel="stylesheet" href="jquery-ui\jquery-ui.structure.css">
+  <style>
+
+  input,textarea{width:35px;z-index: 100;height:35px;}
+  .matresult{resize:none}
+  .mat{display:inline-block;}
+  .ip h1,#ma3 h1 ,#ms3 h1,#mm3 h1{font-size:170px;display:inline-block;margin:0;padding:0}
+  .op h5{display:inline-block;float:left;padding:150px 0px}
+  .m1{display:inline-block;}
+
+
+
+  </style>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <title>Calculate</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- =====================================| HEADER |============================================ -->
+
+  <header>
+     <h1 align="center">MATRIX</h1><br>
+  </header>
+<!-- =====================================| HEADER ENDS|============================================ -->
+
+<!-- =====================================| INFO |============================================ -->
+
+  <div class="container-fluid">
+    <fieldset class="scheduler-border">
+      <legend class="scheduler-border">
+        &nbsp;  INFORMATION
+      </legend>
+      <h5>
+        1.Enter the Numbers(integers) inside given spaces or else the value will be taken as 0.
+        <br />
+        2.Press Enter after each input to see expression on output.(Optional).
+        <br />
+        3.After passing values, click on Calculate Button to find roots(if they exist).
+        <br />
+        4.Press Reset button to clear the fields and reset output box.
+        <br />
+      </h5>
+    </fieldset>
+<!-- =====================================| INFO ENDS |============================================ -->
+
+<!-- =====================================| TABS STRUCTURE |============================================ -->
+
+   <div id="tab">
+     <ul>
+       <li><a href="#add">ADDITION</a></li>
+       <li><a href="#sub">SUBTRACTION</a></li>
+       <li><a href="#mul">MULTIPLICATION</a></li>
+     </ul>
+     <!-- =====================================| TAB 1|============================================ -->
+
+     <div id="add">
+       <div class="row">
+         <div class="col-md-7 border-right ip" align="center" >
+
+           <h2 align="center">  INPUT  </h2>
+            <div id="ma1" class="mat">
+
+              <table cellpadding="5" border="0" height="10%">
+                <tr>
+                  <td rowspan="5" valign="center"><h3>A = </h3></td>
+                  <td rowspan="5" valign="center"><h1>[</h1></td>
+                  <td height="90" colspan="4"> </td>
+                   <td rowspan="5"><h1>]</h1></td>
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td height="60" colspan="4"> </td>
+
+
+                </tr>
+              </table>
+            </div>
+
+
+
+            <div id="ma2" class="mat">
+              <table cellpadding="5" border="0" height="10%">
+                <tr>
+                  <td rowspan="5" valign="center"><h3>B = </h3></td>
+                  <td rowspan="5" valign="center"><h1>[</h1></td>
+                  <td height="90" colspan="4"> </td>
+                   <td rowspan="5"><h1>]</h1></td>
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td height="60" colspan="4"> </td>
+
+
+                </tr>
+              </table>
+            </div>
+
+
+
+
+
+
+           <br /><br />
+           <button id="addc">Calculate</button>
+           <button><a href="matrix.html">Reset</a></button>
+         </div>
+
+         <div class="col-md-5 op">
+           <h2 align="center">  OUTPUT  </h2>
+                <h5>A + B = </h5>
+                <div id="ma3" class="mat">
+                  <table cellpadding="5" border="0" height="10%">
+                    <tr>
+                      <th rowspan="5" valign="center"><h1>[</h1></th>
+                      <th height="90" colspan="4"> </th>
+                       <th rowspan="5"><h1>]</h1></th>
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <th height="60" colspan="4"> </th>
+
+
+                    </tr>
+                  </table>
+                </div>
+
+
+
+         </div>
+       </div>
+     </div>
+
+     <!-- =====================================| TAB 2|============================================ -->
+
+     <div id="sub">
+
+       <div class="row">
+         <div class="col-md-7 border-right ip" align="center" >
+
+           <h2 align="center">  INPUT  </h2>
+            <div id="ms1" class="mat">
+
+              <table cellpadding="5" border="0" height="10%">
+                <tr>
+                  <td rowspan="5" valign="center"><h3>A = </h3></td>
+                  <td rowspan="5" valign="center"><h1>[</h1></td>
+                  <td height="90" colspan="4"> </td>
+                   <td rowspan="5"><h1>]</h1></td>
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td height="60" colspan="4"> </td>
+
+
+                </tr>
+              </table>
+            </div>
+
+
+
+            <div id="ms2" class="mat">
+              <table cellpadding="5" border="0" height="10%">
+                <tr>
+                  <td rowspan="5" valign="center"><h3>B = </h3></td>
+                  <td rowspan="5" valign="center"><h1>[</h1></td>
+                  <td height="90" colspan="4"> </td>
+                   <td rowspan="5"><h1>]</h1></td>
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td height="60" colspan="4"> </td>
+
+
+                </tr>
+              </table>
+            </div>
+
+
+
+
+
+
+           <br /><br />
+           <button id="subc">Calculate</button>
+           <button><a href="matrix.html">Reset</a></button>
+         </div>
+
+         <div class="col-md-5 op">
+           <h2 align="center">  OUTPUT  </h2>
+            <h5>A - B = </h5>
+                <div id="ms3" class="mat">
+                  <table cellpadding="5" border="0" height="10%">
+                    <tr>
+                      <th rowspan="5" valign="center"><h1>[</h1></th>
+                      <th height="90" colspan="4"> </th>
+                       <th rowspan="5"><h1>]</h1></th>
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <th height="60" colspan="4"> </th>
+
+
+                    </tr>
+                  </table>
+                </div>
+
+
+
+         </div>
+       </div>
+     </div>
+
+     <!-- =====================================| TAB 3|============================================ -->
+
+     <div id="mul">
+       <div class="row">
+         <div class="col-md-7 border-right ip" align="center" >
+
+           <h2 align="center">  INPUT  </h2>
+            <div id="mm1" class="mat">
+
+              <table cellpadding="5" border="0" height="10%">
+                <tr>
+                  <td rowspan="5" valign="center"><h3>A = </h3></td>
+                  <td rowspan="5" valign="center"><h1>[</h1></td>
+                  <td height="90" colspan="4"> </td>
+                   <td rowspan="5"><h1>]</h1></td>
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td height="60" colspan="4"> </td>
+
+
+                </tr>
+              </table>
+            </div>
+
+
+
+            <div id="mm2" class="mat">
+              <table cellpadding="5" border="0" height="10%">
+                <tr>
+                  <td rowspan="5" valign="center"><h3>B = </h3></td>
+                  <td rowspan="5" valign="center"><h1>[</h1></td>
+                  <td height="90" colspan="4"> </td>
+                   <td rowspan="5"><h1>]</h1></td>
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+                  <td> <input type="number" ></td>
+
+                </tr>
+                <tr>
+
+                  <td height="60" colspan="4"> </td>
+
+
+                </tr>
+              </table>
+            </div>
+
+
+
+
+
+
+           <br /><br />
+           <button id="mulc">Calculate</button>
+           <button><a href="matrix.html">Reset</a></button>
+         </div>
+
+         <div class="col-md-5 op">
+           <h2 align="center">  OUTPUT  </h2>
+                <h5>A x  B = </h5>
+                <div id="mm3" class="mat">
+                  <table cellpadding="5" border="0" height="10%">
+                    <tr>
+                      <th rowspan="5" valign="center"><h1>[</h1></th>
+                      <th height="90" colspan="4"> </th>
+                       <th rowspan="5"><h1>]</h1></th>
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+                      <td><textarea class="matresult" disabled></textarea> </td>
+
+                    </tr>
+                    <tr>
+
+                      <th height="60" colspan="4"> </th>
+
+
+                    </tr>
+                  </table>
+                </div>
+
+
+
+         </div>
+       </div>
+     </div>
+<!-- =====================================| TAB ENDS|============================================ -->
+
+
+   </div>
+
+
+<script src="jquery-ui\jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+  $("#ma3").hide();
+  $("#ms3").hide();
+  $("#mm3").hide();
+  $("#tab").tabs();
+
+  $("#addc").click(function(){
+    var ma1 = [];
+    var ma2=[];
+    $("#ma1 input").each(function(){
+      ma1.push(parseInt($(this).val()));
+    });
+    $("#ma2 input").each(function(){
+      ma2.push(parseInt($(this).val()));
+    });
+
+
+    $("#ma3").show();
+    $("#ma3 .matresult").each(function(index){
+      var sum = ma1[index] + ma2[index];
+      $(this).text(sum);
+    })
+  });
+
+
+
+  $("#subc").click(function(){
+    var ms1 = [];
+    var ms2=[];
+    $("#ms1 input").each(function(){
+      ms1.push(parseInt($(this).val()));
+    });
+    $("#ms2 input").each(function(){
+      ms2.push(parseInt($(this).val()));
+    });
+
+
+    $("#ms3").show();
+    $("#ms3 .matresult").each(function(index){
+      var dif = ms1[index] - ms2[index];
+      $(this).text(dif);
+    });
+
+  });
+
+
+
+  $("#mulc").click(function(){
+    var mm1=[];
+    var mm2=[];
+    $("#mm1 input").each(function(){
+      mm1.push(parseInt($(this).val()));
+    });
+    $("#mm2 input").each(function(){
+      mm2.push(parseInt($(this).val()));
+    });
+    var n1 = [];
+    var n2 = [];
+    var result =[];
+    var print = [];
+    var i,j,keygen;
+
+    for(i=0;i<3;i++){
+      var temp=[];
+      for(j=0;j<3;j++){
+        temp.push(mm1[3*i+j]);
+      }
+      n1[i]=temp;
+
+    }
+    for(i=0;i<3;i++){
+      var temp=[];
+      for(j=0;j<3;j++){
+        temp.push(mm2[3*i+j]);
+      }
+      n2[i]=temp;
+
+    }
+
+//PROCESS FOR MATRIX MULTIPLY WITH 2-D ARRAY n1 AND n2
+
+var s=0;
+for(i=0;i<3;i++){
+  var temp=[];
+		for(j=0;j<3;j++){
+			for(k=0;k<3;k++){
+				s+= n1[i][k] * n2[k][j];
+			}
+			temp[j]=s;
+			s=0;
+		}
+    result[i]=temp;
+
+	}
+  $("#mm3").show();
+
+// RPRINT MULTIPLIED  MATRIX
+    for(i=0;i<3;i++){
+      for(j=0;j<3;j++){
+        print[3*i + j]=result[i][j];
+      }
+    }
+
+
+
+
+    $("#mm3").show();
+    $("#mm3 .matresult").each(function(index){
+      var mul = print[index];
+      $(this).text(mul);
+    });
+
+
+
+    // $("#m3").show();
+    // $(".matresult").each(function(index){
+    //   var dif = m1[index] - m2[index];
+    //   $(this).text(dif);
+    // });
+
+  });
+
+
+
+
+
+
+});
+
+</script>
+  </div>
+</body>
+</html>

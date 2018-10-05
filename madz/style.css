@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  overflow-x: hidden;
+  padding: 0; }
+  body #header {
+    z-index: 3;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    margin: 0px;
+    padding: 10px;
+    height: 5em;
+    width: 100%; }
+    @media (max-width: 640px) {
+      body #header {
+        display: none; } }
+    body #header h1 {
+      display: inline-block;
+      margin: 5px 0px 10px 10px; }
+      body #header h1 span {
+        background-color: black;
+        padding: 0px 4px; }
+    body #header p {
+      display: inline-block;
+      margin: 0px;
+      font-size: 16px; }
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  z-index: 2;
+  border-left: 200px solid #550780;
+  border-right: 0px solid green;
+  border-bottom: 280px solid transparent; }
+  @media (max-width: 640px) {
+    .box {
+      display: none; } }
+
+.tilt {
+  z-index: 1;
+  border-left: 300px solid #3e095e;
+  border-right: 0px solid green;
+  border-bottom: 220px solid transparent; }
+
+nav {
+  margin: 0;
+  z-index: 4; }
+  nav .search {
+    
+    margin-left: 100px;
+    padding: 0px;
+    width: 48%;
+    display: inline-block;
+    position: relative; }
+    nav .search input {
+      
+      border: 2px solid black;
+      padding: 2px;
+      padding-right: 10px;
+      border-radius: 10px; }
+    nav .search button {
+      border-radius: 0px 10px 10px 0px;
+      position: absolute;
+      top: 2px;
+      right: 0px;
+      background-color: transparent; }
+  @media (max-width: 640px) {
+    nav {
+      background-color: #007BFF; } }
+
+ul li a {
+  color: #550780 !important;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 100px;
+  font-weight: bolder; }
+  ul li a:hover {
+    background-color: #3e095e !important;
+    color: white !important; }
+  @media (max-width: 640px) {
+    ul li a {
+      border-bottom: 1px solid rgba(0, 0, 255, 0.4);
+      color: #ffffff;
+      border-radius: 0;
+      width: auto; } }
+
+.bg {
+  height: 40em;
+  background-image: url("sources\\maths.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.viewport {
+  height: 200px;
+  background-color: rgba(0, 0, 255, 0.4);
+  position: relative;
+  perspective: 1000px; }
+  .viewport .rack {
+    background-color: rgba(105, 109, 110, 0.76);
+    width: 90%;
+    height: 200px;
+    margin: 50px 5%;
+    box-shadow: 0 10px 40px #303030;
+    transform: rotateX(60deg); }
+  .viewport a:nth-child(1) img {
+    position: absolute;
+    top: -60px;
+    left: 5%;
+    width: 13%;
+    height: 170px;
+    z-index: 5;
+    -webkit-box-reflect: below -8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(250, 250, 250, 0.3)));
+    transition: all 0.4s ease-out;
+    -webkit-box-reflect: below -32px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(250, 250, 250, 0.3)));
+    width: 15%; }
+    .viewport a:nth-child(1) img:hover {
+      transform: scale(1.5, 1.5); }
+  .viewport a:nth-child(2) img {
+    position: absolute;
+    top: -60px;
+    left: 23%;
+    width: 13%;
+    height: 170px;
+    z-index: 5;
+    -webkit-box-reflect: below -8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(250, 250, 250, 0.3)));
+    transition: all 0.4s ease-out; }
+    .viewport a:nth-child(2) img:hover {
+      transform: scale(1.5, 1.5); }
+  .viewport a:nth-child(3) img {
+    position: absolute;
+    top: -60px;
+    left: 40%;
+    width: 13%;
+    height: 170px;
+    z-index: 5;
+    -webkit-box-reflect: below -8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(250, 250, 250, 0.3)));
+    transition: all 0.4s ease-out; }
+    .viewport a:nth-child(3) img:hover {
+      transform: scale(1.5, 1.5); }
+  .viewport a:nth-child(4) img {
+    position: absolute;
+    top: -60px;
+    left: 60%;
+    width: 13%;
+    height: 170px;
+    z-index: 5;
+    -webkit-box-reflect: below -8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(250, 250, 250, 0.3)));
+    transition: all 0.4s ease-out; }
+    .viewport a:nth-child(4) img:hover {
+      transform: scale(1.5, 1.5); }
+  .viewport a:nth-child(5) img {
+    position: absolute;
+    top: -60px;
+    left: 77%;
+    width: 13%;
+    height: 170px;
+    z-index: 5;
+    -webkit-box-reflect: below -8px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, transparent), to(rgba(250, 250, 250, 0.3)));
+    transition: all 0.4s ease-out; }
+    .viewport a:nth-child(5) img:hover {
+      transform: scale(1.5, 1.5); }

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="frames.css">
+  <link rel="stylesheet" href="jquery-ui\jquery-ui.css">
+  <link rel="stylesheet" href="jquery-ui\jquery-ui.theme.css">
+  <link rel="stylesheet" href="jquery-ui\jquery-ui.structure.css">
+  <style>
+  input{width:35px;z-index: 100}
+  #n{position: absolute;top:75px;left:305px}
+  </style>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <title>Calculate</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+     <h1 align="center">FACTORIAL</h1><br>
+  </header>
+
+  <div class="container-fluid">
+    <fieldset class="scheduler-border">
+      <legend class="scheduler-border">
+        &nbsp;  INFORMATION
+      </legend>
+      <h5>
+        1.Enter the Numbers(integers) inside given spaces or else the value will be taken as 0.
+        <br />
+        2.Press Enter after each input to see expression on output.(Optional).
+        <br />
+        3.After passing values, click on Calculate Button to find roots(if they exist).
+        <br />
+        4.Press Reset button to clear the fields and reset output box.
+        <br />
+      </h5>
+    </fieldset>
+
+
+   <div id="tab">
+     <ul>
+       <li><a href="#fact">FACTORIAL</a></li>
+       <li><a href="#p">PERMUTATIONS</a></li>
+       <li><a href="#c">COMBINATIONS</a></li>
+     </ul>
+
+     <div id="fact">
+       <div class="row">
+         <div class="col-md-6 border-right ip" align="center" >
+           <h2 align="center">INPUT</h2>
+           <input type="number" placeholder="0" id="f" value="f"> <i class="fa fa-exclamation fa-2x" aria-hidden="true"></i>
+           <br /><br />
+           <button id="fb">Calculate</button>
+           <button><a href="fact.html">Reset</a></button>
+         </div>
+
+         <div class="col-md-6 op">
+           <h2 align="center">OUTPUT</h2>
+              <p id="fo">
+
+              </p>
+         </div>
+       </div>
+     </div>
+     <div id="p">
+
+       <div class="row">
+         <div class="col-md-6 border-right ip" align="center" >
+           <h2 align="center">INPUT</h2>
+
+           <h1 style="margin-top:-30px;margin-left:110px;margin-bottom:-40px; font-size:10em;">P</h1>
+            <input type="number" placeholder="n" id="n" value="n">
+           <input type="number" placeholder="r" id="r" value="r" style="margin-left:180px;">
+           <br /><br />
+           <button id="pb">Calculate</button>
+           <button><a href="fact.html">Reset</a></button>
+         </div>
+
+         <div class="col-md-6 op">
+           <h2 align="center">OUTPUT</h2>
+              <p id="po" >
+
+              </p>
+         </div>
+       </div>
+     </div>
+
+
+     <div id="c">
+       <div class="row">
+         <div class="col-md-6 border-right ip" align="center" >
+           <h2 align="center">INPUT</h2>
+
+           <h1 style="margin-top:-30px;margin-left:80px;margin-bottom:-40px; font-size:10em;">C</h1>
+            <input type="number" placeholder="n" id="n" value="n">
+           <input type="number" placeholder="r" id="r" value="r" style="margin-left:180px;">
+           <br /><br />
+           <button id="cb">Calculate</button>
+           <button><a href="fact.html">Reset</a></button>
+         </div>
+
+         <div class="col-md-6 op">
+           <h2 align="center">OUTPUT</h2>
+              <p id="co" >
+
+              </p>
+         </div>
+       </div>
+
+
+
+     </div>
+
+
+   </div>
+
+<script src="jquery-ui\jquery-ui.js"></script>
+<script>
+
+    function factorial(n){
+      var fact=1;
+      var i = 2;
+      if(n<0){return(0);}
+      else{
+      while(i<=n){
+        fact=fact*i;
+        i++;
+      }
+      return(fact);
+    }
+    }
+    $(document).ready(function(){
+      $("#tab").tabs();
+
+
+
+      $("#fb").click(function(){
+        var n= $("#f").val();
+        if(factorial(n)==0){var text = "SORRY! NO NEGATIVE NUMBERS";}
+        else{var text= n + " ! = " + factorial(n) ;}
+
+       $("#fo").text(text);
+      });
+
+      $("#cb").click(function(){
+        var n= $("#n").val();
+        var r= $("#r").val();
+        if(factorial(n)==0){var text = "SORRY! NO NEGATIVE NUMBERS";}
+        else{var text= "Value of C (n,r) is " + factorial(n)/(factorial(n-r));}
+
+       $("#co").text(text);
+      });
+
+      $("#pb").click(function(){
+        var n= $("#n").val();
+        var r= $("#r").val();
+        if(factorial(n)==0){var text = "SORRY! NO NEGATIVE NUMBERS";}
+        else{var text= "Value of P (n,r) is " + factorial(n)/(factorial(n-r)*factorial(r));}
+
+       $("#po").text(text);
+      });
+
+    });
+
+</script>
+  </div>
+</body>
+</html>
