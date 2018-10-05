@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="frames.css">
+  <style>
+  input{width:35px}
+
+  </style>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <title>Calculate</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <header>
+     <h1 align="center">QUADRATIC EQUATIONS</h1><br>
+  </header>
+
+  <div class="container-fluid">
+    <fieldset class="scheduler-border">
+      <legend class="scheduler-border">
+        &nbsp;  INFORMATION
+      </legend>
+      <h5>
+        1.Enter the Numbers(integers) inside given spaces or else the value will be taken as 0.
+        <br />
+        2.Press Enter after each input to see expression on output.(Optional).
+        <br />
+        3.After passing values, click on Calculate Button to find roots(if they exist).
+        <br />
+        4.Press Reset button to clear the fields and reset output box.
+        <br />
+      </h5>
+    </fieldset>
+
+    <div class="row">
+      <div class="col-md-6 border-right ip" align="center" >
+        <h2 align="center">INPUT</h2>
+        <input type="number" placeholder="0" id="a" value="a"> x <sup>2</sup> +
+        <input type="number" placeholder="0" id="b" value="b"> x +
+        <input type="number" placeholder="0" id="c" value="c">
+        <br /><br />
+        <button>Calculate</button>
+        <button>Reset</button>
+      </div>
+
+      <div class="col-md-6 op">
+        <h2 align="center">OUTPUT</h2>
+        <p>
+         Quadratic equation :
+          <span>a</span> x <sup>2</sup> + <span>b</span> x + <span>c</span> = 0
+        </p>
+        <p>
+            Determinant of equ. is D = <i></i>
+
+
+        </p>
+        <p>
+          D>=0 , Hence Real Roots Exists .<br />
+            Roots are <b></b>  And  <b></b>
+        </p>
+        <p>
+          Roots are Imaginary. I am Working On Complex roots :-)
+        </p>
+      </div>
+    </div>
+    
+
+  </div>
+
+  <script type="text/javascript">
+     $(document).ready(function(){
+       $(".op p:gt(0)").hide();
+       $("#a").keypress(function(){
+         var a = $("#a").val();
+         $("span:first").text(a);
+       });
+       $("#b").keypress(function(){
+         var b = $("#b").val();
+         $("span:odd").text(b);
+       });
+       $("#c").keypress(function(){
+         var c = $("#c").val();
+         $("span:last").text(c);
+       });
+
+          $("button:first").click(function() {
+             var a = $("#a").val();
+             var b = $("#b").val();
+             var c = $("#c").val();
+             var d = (b**2)-4*a*c;
+             $(".op p:eq(1)").show();
+             $("p:odd i").text(d);
+             if (d>=0) {
+              $(".op p:eq(2)").show();
+              $(".op p:eq(3)").hide();
+              var r1=(-b + Math.sqrt(d))/(2*a);
+              var r2=(-b - Math.sqrt(d))/(2*a);
+               $("p:eq(2) b:first").text(r1);
+               $("p:eq(2) b:last").text(r2);
+
+             }
+             else {
+               $(".op p:eq(3)").show();
+                $(".op p:eq(2)").hide();
+               $("p:last").text("Roots Are Not Real. I am Working On Complex Roots :-)");
+             }
+           });
+            $("button:odd").click(function(){
+               location.reload();
+            })
+
+      });
+
+
+     </script>
+</body>
+</html>

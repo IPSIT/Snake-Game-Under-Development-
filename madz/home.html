@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="jquery-ui\jquery-ui.css">
+<link rel="stylesheet" href="jquery-ui\jquery-ui.theme.css">
+<link rel="stylesheet" href="jquery-ui\jquery-ui.structure.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="header">
+    <h1>M<span>AD</span>Z</h1>
+<br />
+    <p>
+       &emsp;Made Easy
+    </p>
+  </div>
+  <!-- =========================| SIDE TAG |=========================================== -->
+  <div class="box"></div>
+  <div class="box tilt"></div>
+  <!-- =======================| SIDE TAG ENDS |======================================== -->
+
+  <!-- ===========================| NAVBAR |====================================== -->
+  <nav class="navbar navbar-expand-sm navbar-dark" >
+    <div class="container">
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+ 			<span class="navbar-toggler-icon"></span>
+ 		</button>
+    <div class = "search">
+      <input type="text" id="suggest" size="50" placeholder="SEARCH" style="margin-left: 20%;z-index:4">
+      <a href = ""><button class="go">GO</button></a>
+    </div>
+      <div class="collapse navbar-collapse " id="menu">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item"><a href="" class="nav-link">ABOUT</a></li>
+          <li class="nav-item"><a href="" class="nav-link">CONTACT</a></li>
+          <li class="nav-item"><a href="" class="nav-link">SIGN IN</a></li>
+          <li class="nav-item"><a href="" class="nav-link">SIGN UP</a></li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+  </nav>
+ <!-- ========================================| NAVBAR ENDS |========================== -->
+ <!-- ========================================| BANNER   |========================== -->
+
+
+     <div class="bg"> </div>
+
+
+ <!-- ========================================| BANNER ENDS |========================== -->
+ <!-- =============================================| FRAME |==================================== -->
+<br /><br />
+
+ <div class="container-fluid">
+   <iframe frameborder="1" width="100%" height="400" scrolling="no" src="default.html" id="frame" allowfullscreen>
+     hello
+   </iframe>
+ </div>
+<br><br><br><br><br><br><br><br><br><br>
+<!-- ============================================| FRAME ENDS |========================================= -->
+<div class="viewport" >
+  <a href="#frame"><img src="sources\\matrix.png" id="matrix" title="MATRICES" ></a>
+  <a href="#frame"><img src="sources\\prime.png" id="prime" title="PRIME NUMBERS"></a>
+  <a href="#frame"><img src="sources\\fact.png" id="fact" title="FACTORIAL"></a>
+  <a href="#frame"><img src="sources\\area.png" id="area" title="AREAS, PERIMETER..." ></a>
+  <a href="#frame"><img src="sources\\quadratic.png" id="quad" title="QUADRATIC EQUATION" ></a>
+
+  <div class="rack">
+   </div>
+
+
+</div>
+
+
+<!-- =======================================| Script |=========================================== -->
+<script src="jquery-ui\jquery-ui.js"></script>
+<script>
+
+  $(document).ready(function(){
+
+// SEARCH BAR
+   $(".go").click(function(){
+     var search = $("#suggest").val();
+     var category = ["Quadratic","Factorial","Matrices","Prime","Permutations","Combinations"]
+     //CHECK FOR PRIME
+     for(i=0;i<category.length;i++){
+       if(search.search("Quadratic")!=-1){
+         $("#frame").attr({"src":"quad.html" , "height": "670px"});
+         $(".search a").attr("href","#frame");
+         break;
+       }
+
+       else if(search.search("Factorial")!=-1){
+         $("#frame").attr({"src":"fact.html" , "height": "670px"});
+         $(".search a").attr("href","#frame");
+         break;
+       }
+       else if(search.search("Matrices")!=-1){
+         $("#frame").attr({"src":"matrix.html" , "height": "670px"});
+         $(".search a").attr("href","#frame");
+         break;
+       }
+
+       else if(search.search("Prime")!=-1 || search.search("Permutations")!=-1 ||search.search("Combinations")!=-1 ){
+         $("#frame").attr({"src":"prime.html" , "height": "670px"});
+         $(".search a").attr("href","#frame");
+         break;
+       }
+       else if(i==category.length-1){
+         alert("Select From Suggestions ! ");
+       }
+
+     }
+
+
+   })
+
+// SEARCH BAR FINISHED
+
+    $("#suggest").autocomplete({source: ["Quadratic Equations","Factorial","Matrices","Prime No.","Permutations","Combinations", "Prime Factors"]},{autoFocus:true});
+    $("#matrix").tooltip();
+    $("#prime").tooltip();
+    $("#fact").tooltip();
+    $("#area").tooltip();
+    $("#quad").tooltip();
+
+    $("#quad").click(function(){
+      $("iframe").attr({"src":"quad.html" , "height": "650px"});
+    });
+    $("#fact").click(function(){
+      $("iframe").attr({"src":"fact.html" , "height": "780px"});
+    });
+    $("#prime").click(function(){
+      $("iframe").attr({"src":"prime.html" , "height": "670px"});
+    });
+    $("#matrix").click(function(){
+      $("iframe").attr({"src":"matrix.html" , "height": "950px"});
+    });
+    $("#area").click(function(){
+      $("iframe").attr("src","area.html");
+    });
+  });
+</script>
+</body>
+</html>
